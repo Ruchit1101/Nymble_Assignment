@@ -2,17 +2,17 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Create a list of destinations with activities
+       
         Destination destination1 = createDestination("Destination1");
         Destination destination2 = createDestination("Destination2");
 
-        // Create a list of travel packages
+        
         List<TravelPackage> travelPackages = createTravelPackages(List.of(destination1, destination2));
 
-        // Add passengers to travel packages
+       
         addPassengersToTravelPackages(travelPackages);
 
-        // Print details of travel packages
+        
         for (TravelPackage travelPackage : travelPackages) {
             System.out.println("------ Travel Package Details ------");
             travelPackage.printItinerary();
@@ -25,11 +25,10 @@ public class Main {
     private static Destination createDestination(String name) {
         Destination destination = new Destination(name);
 
-        // Create activities for the destination
+        
         Activity activity1 = new Activity("Activity1", "Description1", 50.0, 20, destination);
         Activity activity2 = new Activity("Activity2", "Description2", 75.0, 15, destination);
 
-        // Add activities to the destination
         destination.addActivity(activity1);
         destination.addActivity(activity2);
 
@@ -39,11 +38,11 @@ public class Main {
     private static List<TravelPackage> createTravelPackages(List<Destination> destinations) {
         List<TravelPackage> travelPackages = new ArrayList<>();
 
-        // Create travel packages with different capacities
+        
         TravelPackage travelPackage1 = new TravelPackage("Package1", 30, destinations, new ArrayList<>());
         TravelPackage travelPackage2 = new TravelPackage("Package2", 25,destinations, new ArrayList<>());
 
-        // Add travel packages to the list
+       
         travelPackages.add(travelPackage1);
         travelPackages.add(travelPackage2);
 

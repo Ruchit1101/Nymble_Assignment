@@ -53,5 +53,4 @@ public class PassengerTest {
         assertEquals(0.0, passenger.getBalance(), 0.01);
     }
 
-    // Add more test cases as needed for other methods and scenarios
 }

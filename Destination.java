@@ -1,13 +1,16 @@
 import java.util.*;
 
+/*1.	Each destination has a name, and a list of the activities available at that destination. */
 public class Destination {
-    private 
-         String destinationName;
-         List<Activity>activities;
+     
+    private String destinationName;
+    private List<Activity>activities;
+    private List<Passenger> passengers;
     
     public Destination(String destinationName){
       this.destinationName = destinationName;
       this.activities = new ArrayList<>();
+      this.passengers = new ArrayList<>();
     }
     public String getName(){
         return destinationName;
@@ -17,5 +20,8 @@ public class Destination {
     }
     public List<Activity> getActivities(){
         return activities;
+    }
+    public List<Passenger> getPassengers(){
+        return passengers;
     }
 }

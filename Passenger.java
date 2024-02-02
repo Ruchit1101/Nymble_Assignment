@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Passenger {
     
-    /*Each passenger has a name and a passenger number. */
+    /* 2/6. Each passenger has a name and a passenger number. */
   private   String passengerName;
   private   int passengerNumber;
   private   PassengerType type;
@@ -32,7 +32,7 @@ public class Passenger {
   public List<Activity> getActivities(){
     return activities;
   }
-  /*1.	A passenger can be a standard, gold or premium passenger. 
+  /*7.	A passenger can be a standard, gold or premium passenger. 
           1.	A standard passenger has a balance. And each time a standard passenger signs up for an activity the cost is deducted from their balance. They cannot sign up for an activity if they do not have sufficient balance.
           2.  A gold passenger has a balance. Each time a gold passenger signs up for an activity, a 10% discount is applied on the cost of the activity and the discounted amount is deducted from their balance. They cannot sign up for an activity if they do not have sufficient balance.
          3.  A premium passenger can sign up for activities for free
@@ -55,10 +55,10 @@ public class Passenger {
   public double totalCost(Activity activity){
     return activity.getCost() * 0.9;
   }
-  /*2.	Print the details of an individual passenger including their 
-     1.	name,
-     2.	passenger number,
-     3.	balance (if applicable),
+  /*3.	Print the details of an individual passenger including their 
+     a.	name,
+     b.	passenger number,
+     c.	balance (if applicable),
  */
   public void printpassengerDetails(){
      System.out.println("Passenger Name: " + passengerName);
@@ -66,7 +66,7 @@ public class Passenger {
     if(passengerBalance > 0)
      System.out.println("Passenger Account Balance: " + passengerBalance);
   }
-  /* 4.	list of each activity they have signed up for,
+  /* 3 d.	list of each activity they have signed up for,
        including the destination the at which the activity is 
        taking place and the price the passenger paid for the activity. */
   public void individualActivity(){
@@ -81,7 +81,7 @@ public class Passenger {
         System.out.println(it.getCost());
     }
   }
-  // Each Passenger Can Sign Up for Zero or More Activities at Each Destination of the Travel Package
+  //4. Each Passenger Can Sign Up for Zero or More Activities at Each Destination of the Travel Package
   public void distinctActivityTrack(Activity act){
     if(!activities.contains(act)){
       if(act.getCapacity() > countPassengerForActivity(act)){
@@ -94,6 +94,7 @@ public class Passenger {
           passengerBalance -= discount;
         }
       }
+      //5. Once an activity has reached it's capacity no more passengers can sign up for it.
       else{
         System.out.println("Activity " + act.getName() + " is already at full capacity. Please select other activity");
       }

@@ -1,4 +1,4 @@
-/*Each activity has a name, a description, a cost and a capacity */
+/*3. Each activity has a name, a description, a cost and a capacity */
 public class Activity {
     
     private String activityName;
@@ -6,7 +6,8 @@ public class Activity {
     private double activityCost;
     private int activityCapacity;
     private Destination destination;
-     public Activity(String activityName, String activityDescription, double activityCost, int activityCapacity, Destination destination){
+     public Activity(String activityName, String activityDescription, double activityCost, 
+     int activityCapacity, Destination destination){
         this.activityName = activityName;
         this.activityDescription = activityDescription;
         this.activityCost = activityCost;
@@ -24,7 +25,7 @@ public class Activity {
     public int getCapacity(){
       return  activityCapacity;
    }
-//    Each Activity is Available at One Destination Only
+// 3.   Each Activity is Available at One Destination Only
     public Destination getDestination(){
         return destination;
     }

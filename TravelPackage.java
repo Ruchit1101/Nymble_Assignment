@@ -8,10 +8,19 @@ public class TravelPackage{
    private List<Destination> destinationsList;
    private List<Passenger> passengersList;
 
-    public TravelPackage(String name, int cap, List<Destination>destinationsList){
+    public TravelPackage(String name, int cap, List<Destination>destinationsList,
+    List<Passenger>passengersList){
         this.travelPackageName = name;
         this.passengerCapacity = cap;
         this.destinationsList = new ArrayList<>(destinationsList);
+        this.passengersList = new ArrayList<>(passengersList);
+    }
+    // All the necessary getter method...
+    public List<Passenger> getPassengersList(){
+        return passengersList;
+    }
+    public String getTravelPackageName() {
+        return travelPackageName;
     }
    /*1. Print itinerary of the travel package including: 
         1. travel package name, 
@@ -23,7 +32,7 @@ public class TravelPackage{
         System.out.print(" -" + dest.getName());
         System.out.println(" Activies: ");
         //  details of the activities available at each destination, like name, cost, capacity and description..
-        for(Activity activity: dest.getActivities()){
+        for (Activity activity : dest.getActivities()){
              System.out.print(" - Name: " + activity.getName());
              System.out.println(" Cost: "+ activity.getCost());
              System.out.println(" Capacity: " + activity.getCapacity());
